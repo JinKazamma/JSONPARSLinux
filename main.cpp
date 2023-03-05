@@ -73,7 +73,7 @@ int main()
 		if (i!=DataHas2ObjectNotHas1.size()-1)
 		cout<<", ";
 	}cout<<"]}";
-	cout<<"{\"version releas 1 bigger\":[";
+	cout<<"{\"version release 1 bigger\":[";
 	for (int i = 0; i < versionReleasIn1biggerThan2.size(); i++)
 	{
 		versionReleasIn1biggerThan2[i]->putdata();
