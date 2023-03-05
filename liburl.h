@@ -20,7 +20,14 @@ class Massiv
 	int Buildtime;
 	std::string Source;
 public:
-	Massiv(std::string name, int epoch, std::string version, std::string release, std::string arch, std::string disttag, int buildtime, std::string source);
+	Massiv(const std::string &name,
+	int epoch, 
+	const std::string &version,
+	const std::string &release,
+	const std::string &arch,
+	const std::string &disttag,
+	int buildtime,
+	const std::string &source);
 	Massiv(const Massiv& x);
 	void putdata();
 	bool operator==(const Massiv&m);
