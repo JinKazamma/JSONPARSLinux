@@ -48,13 +48,10 @@ bool Massiv::operator==(const Massiv& m)
 {
 	return (Name == m.Name && Epoch == m.Epoch && Version == m.Version && Release == m.Release && Arch == m.Arch && Disttag == m.Disttag && Buildtime == m.Buildtime && Source == m.Source);
 };
-bool Massiv::Ifbig(const Massiv&s)
-{
-	return (Version > s.Version && Release > s.Release);
-}
+
 bool Massiv::Ifsmall(const Massiv& s)
 {
-	return (Version < s.Version && Release < s.Release);
+	return (Version <= s.Version && Release <= s.Release);
 }
 void Jonson(std::string& str, std::vector<Massiv*>& m, int t)
 {

@@ -31,7 +31,6 @@ public:
 	Massiv(const Massiv& x);
 	void putdata();
 	bool operator==(const Massiv&m);
-	bool Ifbig(const Massiv&s);
 	bool Ifsmall(const Massiv& s);
 };
 void Jonson(std::string& str, std::vector<Massiv*>& m, int t);
