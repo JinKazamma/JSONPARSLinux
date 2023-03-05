@@ -35,14 +35,14 @@ Massiv::Massiv(const Massiv& x)
 };
 void Massiv::putdata()
 {
-	std::cout << "{\"name\": "<<"\""<< Name <<"\", "
-				<< "\"epoch\": " << "\""<<Epoch<<"\", "
-				<< "\"tversion\": "<< "\""<<Version<<"\", "
-				<< "\"release\" "<< "\""<<Release <<"\", "
-				<< "\"arch\" " <<"\""<<Arch <<"\", "
-				<< "\"disttag\" "<<"\""<<Disttag<<"\", "
-				<< "\"buildtime\" " << "\""<<Buildtime <<"\", "
-				<< "\"source\" " << "\""<<Source<<"\"}";
+	std::cout 	<< "{\"name\": "		<< "\""<<Name		<<"\", "
+				<< "\"epoch\": " 		<< "\""<<Epoch		<<"\", "
+				<< "\"tversion\": "		<< "\""<<Version	<<"\", "
+				<< "\"release\": "		<< "\""<<Release 	<<"\", "
+				<< "\"arch\": " 		<< "\""<<Arch		<<"\", "
+				<< "\"disttag\": "		<< "\""<<Disttag	<<"\", "
+				<< "\"buildtime\": " 	<< "\""<<Buildtime	<<"\", "
+				<< "\"source\": " 		<< "\""<<Source		<<"\"}";
 };
 bool Massiv::operator==(const Massiv& m)
 {
