@@ -42,7 +42,7 @@ void Massiv::putdata()
 				<< "\"arch\" " <<"\""<<Arch <<"\", "
 				<< "\"disttag\" "<<"\""<<Disttag<<"\", "
 				<< "\"buildtime\" " << "\""<<Buildtime <<"\", "
-				<< "\"source\" " << "\""<<Source<<"\", " << std::endl;
+				<< "\"source\" " << "\""<<Source<<"\"}, " << std::endl;
 };
 bool Massiv::operator==(const Massiv& m)
 {

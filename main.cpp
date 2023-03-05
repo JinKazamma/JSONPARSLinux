@@ -69,17 +69,26 @@ int main()
 			}
 		}
 	}
+	cout<<"{\"Packeg 1 has\":[";
 	for (int i = 0; i < mass3.size(); i++)
 	{
 		mass3[i]->putdata();
-	}
+		if (i!=mass3.size()-1)
+		cout<<", ";
+	}cout<<"]}";
+	cout<<"{\"Packeg 2 has\":[";
 	for (int i = 0; i < mass4.size(); i++)
 	{
 		mass4[i]->putdata();
-	}
+		if (i!=mass3.size()-1)
+		cout<<", ";
+	}cout<<"]}";
+	cout<<"{\"version releas 1 bigger\":[";
 	for (int i = 0; i < mass5.size(); i++)
 	{
 		mass5[i]->putdata();
+		if (i!=mass3.size()-1)
+		cout<<", ";
 	}
-	return 0;
+	return 0;cout<<"]}";
 }
