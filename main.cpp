@@ -4,80 +4,80 @@ int main()
 {
 	string adress;
 	string adress2;
-	int kolichestvoElementov = 0;
-	int kolichestvoElementov2 = 0;
-	vector <Massiv*> objectDannyh1;
-	vector <Massiv*> objectDannyh2;
-	vector <Massiv*> dannie1NoNet2;
-	vector <Massiv*> dannie2NoNet1;
-	vector <Massiv*> versionReleasEstV1bolshe2;
+	int counterForNumberOfElements = 0;
+	int counterForNumberOfElements2 = 0;
+	vector <Massiv*> DataFor1stObject;
+	vector <Massiv*> DataFor2ndObject;
+	vector <Massiv*> DataHas1ObjectNotHas2;
+	vector <Massiv*> DataHas2ObjectNotHas1;
+	vector <Massiv*> versionReleasEstIn1biggerThan2;
 	Curl(adress);
 	Curl(adress2);
-	Fortemp(adress, kolichestvoElementov);
-	Fortemp(adress2, kolichestvoElementov2);
-	Jonson(adress, objectDannyh1, kolichestvoElementov);
-	Jonson(adress2, objectDannyh2, kolichestvoElementov2);
-	for (int i = 0; i < objectDannyh1.size(); i++)
+	Fortemp(adress, counterForNumberOfElements);
+	Fortemp(adress2, counterForNumberOfElements2);
+	Jonson(adress, DataFor1stObject, counterForNumberOfElements);
+	Jonson(adress2, DataFor2ndObject, counterForNumberOfElements2);
+	for (int i = 0; i < DataFor1stObject.size(); i++)
 	{
-		for (int j = 0; j < objectDannyh2.size(); j++)
+		for (int j = 0; j < DataFor2ndObject.size(); j++)
 		{
-			if (*objectDannyh1[i] == *objectDannyh2[j])
+			if (*DataFor1stObject[i] == *DataFor2ndObject[j])
 			{
 				break;
 			}
-			if (j == objectDannyh2.size() - 1)
+			if (j == DataFor2ndObject.size() - 1)
 			{
-				dannie1NoNet2.push_back(new Massiv(*objectDannyh1[i]));
+				DataHas1ObjectNotHas2.push_back(new Massiv(*DataFor1stObject[i]));
 			}
 		}
 	}
-	for (int i = 0; i < objectDannyh2.size(); i++)
+	for (int i = 0; i < DataFor2ndObject.size(); i++)
 	{
-		for (int j = 0; j < objectDannyh1.size(); j++)
+		for (int j = 0; j < DataFor1stObject.size(); j++)
 		{
-			if (*objectDannyh2[i] == *objectDannyh1[j])
+			if (*DataFor2ndObject[i] == *DataFor1stObject[j])
 			{
 				break;
 			}
-			if (j == objectDannyh1.size() - 1)
+			if (j == DataFor1stObject.size() - 1)
 			{
-				dannie2NoNet1.push_back(new Massiv(*objectDannyh2[i]));
+				DataHas2ObjectNotHas1.push_back(new Massiv(*DataFor2ndObject[i]));
 			}
 		}
 	}
-	for (int i = 0; i < objectDannyh1.size(); i++)
+	for (int i = 0; i < DataFor1stObject.size(); i++)
 	{
-		for (int j = 0; j < objectDannyh2.size(); j++)
+		for (int j = 0; j < DataFor2ndObject.size(); j++)
 		{
-			if (objectDannyh1[i]->Ifsmall(*objectDannyh2[j]))
+			if (DataFor1stObject[i]->Ifsmall(*DataFor2ndObject[j]))
 			{
 				break;
 			}		
-			if (j == objectDannyh2.size() - 1)
+			if (j == DataFor2ndObject.size() - 1)
 			{
-				versionReleasEstV1bolshe2.push_back(new Massiv(*objectDannyh1[i]));
+				versionReleasEstIn1biggerThan2.push_back(new Massiv(*DataFor1stObject[i]));
 			}
 		}
 	}
 	cout<<"{\"Packeg 1 has\":[";
-	for (int i = 0; i < dannie1NoNet2.size(); i++)
+	for (int i = 0; i < DataHas1ObjectNotHas2.size(); i++)
 	{
-		dannie1NoNet2[i]->putdata();
-		if (i!=dannie1NoNet2.size()-1)
+		DataHas1ObjectNotHas2[i]->putdata();
+		if (i!=DataHas1ObjectNotHas2.size()-1)
 		cout<<", ";
 	}cout<<"]}";
 	cout<<"{\"Packeg 2 has\":[";
-	for (int i = 0; i < dannie2NoNet1.size(); i++)
+	for (int i = 0; i < DataHas2ObjectNotHas1.size(); i++)
 	{
-		dannie2NoNet1[i]->putdata();
-		if (i!=dannie2NoNet1.size()-1)
+		DataHas2ObjectNotHas1[i]->putdata();
+		if (i!=DataHas2ObjectNotHas1.size()-1)
 		cout<<", ";
 	}cout<<"]}";
 	cout<<"{\"version releas 1 bigger\":[";
-	for (int i = 0; i < versionReleasEstV1bolshe2.size(); i++)
+	for (int i = 0; i < versionReleasEstIn1biggerThan2.size(); i++)
 	{
-		versionReleasEstV1bolshe2[i]->putdata();
-		if (i!=versionReleasEstV1bolshe2.size()-1)
+		versionReleasEstIn1biggerThan2[i]->putdata();
+		if (i!=versionReleasEstIn1biggerThan2.size()-1)
 		cout<<", ";
 	}cout<<"]}"<<endl;
 
