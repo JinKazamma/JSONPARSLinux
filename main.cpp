@@ -10,7 +10,7 @@ int main()
 	vector <Massiv*> DataFor2ndObject;
 	vector <Massiv*> DataHas1ObjectNotHas2;
 	vector <Massiv*> DataHas2ObjectNotHas1;
-	vector <Massiv*> versionReleasEstIn1biggerThan2;
+	vector <Massiv*> versionReleasIn1biggerThan2;
 	Curl(adress);
 	Curl(adress2);
 	Fortemp(adress, counterForNumberOfElements);
@@ -55,7 +55,7 @@ int main()
 			}		
 			if (j == DataFor2ndObject.size() - 1)
 			{
-				versionReleasEstIn1biggerThan2.push_back(new Massiv(*DataFor1stObject[i]));
+				versionReleasIn1biggerThan2.push_back(new Massiv(*DataFor1stObject[i]));
 			}
 		}
 	}
@@ -74,10 +74,10 @@ int main()
 		cout<<", ";
 	}cout<<"]}";
 	cout<<"{\"version releas 1 bigger\":[";
-	for (int i = 0; i < versionReleasEstIn1biggerThan2.size(); i++)
+	for (int i = 0; i < versionReleasIn1biggerThan2.size(); i++)
 	{
-		versionReleasEstIn1biggerThan2[i]->putdata();
-		if (i!=versionReleasEstIn1biggerThan2.size()-1)
+		versionReleasIn1biggerThan2[i]->putdata();
+		if (i!=versionReleasIn1biggerThan2.size()-1)
 		cout<<", ";
 	}cout<<"]}"<<endl;
 
