@@ -37,7 +37,7 @@ void Massiv::putdata()
 {
 	std::cout 	<< "{\"name\": "		<< "\""<<Name		<<"\", "
 				<< "\"epoch\": " 		<< "\""<<Epoch		<<"\", "
-				<< "\"tversion\": "		<< "\""<<Version	<<"\", "
+				<< "\"version\": "		<< "\""<<Version	<<"\", "
 				<< "\"release\": "		<< "\""<<Release 	<<"\", "
 				<< "\"arch\": " 		<< "\""<<Arch		<<"\", "
 				<< "\"disttag\": "		<< "\""<<Disttag	<<"\", "
