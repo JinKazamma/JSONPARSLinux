@@ -1,4 +1,5 @@
-#pragma once
+#ifndef	liburl
+#define liburl
 #define CURL_STATICLIB
 #include <iostream>
 #include <fstream>
@@ -36,3 +37,4 @@ public:
 void Jonson(std::string& str, std::vector<Massiv*>& m, int t);
 void Curl(std::string& str);
 void Fortemp(std::string& sstr, int& t);
+#endif
