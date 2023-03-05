@@ -19,7 +19,7 @@ int main()
 	Jonson(stroka2, mass2, temp2);
 	cout << temp << endl;
 	cout << temp2 << endl;
-	/*for (int i = 0; i < mass1.size(); i++)
+	for (int i = 0; i < mass1.size(); i++)
 	{
 		for (int j = 0; j < mass2.size(); j++)
 		{
@@ -46,7 +46,7 @@ int main()
 				mass4.push_back(new Massiv(*mass2[i]));
 			}
 		}
-	}*/
+	}
 	bool flag = false;
 	for (int i = 0; i < mass1.size(); i++)
 	{
@@ -69,14 +69,14 @@ int main()
 			}
 		}
 	}
-	/*for (int i = 0; i < mass3.size(); i++)
+	for (int i = 0; i < mass3.size(); i++)
 	{
 		mass3[i]->putdata();
 	}
 	for (int i = 0; i < mass4.size(); i++)
 	{
 		mass4[i]->putdata();
-	}*/
+	}
 	for (int i = 0; i < mass5.size(); i++)
 	{
 		mass5[i]->putdata();
