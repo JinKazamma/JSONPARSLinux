@@ -81,6 +81,6 @@ int main()
 		mass5[i]->putdata();
 		if (i!=mass5.size()-1)
 		cout<<", ";
-	}
-	return 0;cout<<"]}";
+	}cout<<"]}";
+	return 0;
 }
