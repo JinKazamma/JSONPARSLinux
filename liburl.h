@@ -34,7 +34,10 @@ public:
 	bool operator==(const Massiv&m);
 	bool Ifsmall(const Massiv& s);
 };
-void Jonson(std::string& str, std::vector<Massiv*>& m, int t);
+void Jonson(std::string& str, std::vector<Massiv*>& m, int &t);
 void Curl(std::string& str);
 void Fortemp(std::string& sstr, int& t);
+void Pars1(std::vector<Massiv*>&d1,std::vector<Massiv*>&d2,std::vector<Massiv*>&res1);
+void Pars2(std::vector<Massiv*>&d11,std::vector<Massiv*>&d22,std::vector<Massiv*>&res2);
+void ParsBigger(std::vector<Massiv*>&d1,std::vector<Massiv*>&d2,std::vector<Massiv*>&res3);
 #endif

@@ -1,5 +1,4 @@
 #include "liburl.h"
-
 using json = nlohmann::json;
 static size_t getResponsetoString(void* contents, size_t size, size_t nmemb, void* userp)
 {
@@ -53,7 +52,7 @@ bool Massiv::Ifsmall(const Massiv& s)
 {
 	return (Version <= s.Version && Release <= s.Release);
 }
-void Jonson(std::string& str, std::vector<Massiv*>& m, int t)
+void Jonson(std::string& str, std::vector<Massiv*>& m, int &t)
 {
 	json responseJson = json::parse(str);
 	json object = responseJson["packages"];
@@ -65,11 +64,12 @@ void Jonson(std::string& str, std::vector<Massiv*>& m, int t)
 }
 void Curl(std::string& str)
 {
+	std::string count[2]={"первый","второй"};
 	char adress[500];
-	static int stat = 1;
+	static int stat = 0;
 	CURL* curl;
 	CURLcode response;
-	std::cout << "vvedite adress " << stat << " "; std::cin >> adress;
+	std::cout << "Введите " <<count[stat]<< " адресс "; std::cin >> adress;
 	curl = curl_easy_init();
 	curl_easy_setopt(curl, CURLOPT_URL, adress);
 	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, getResponsetoString);
@@ -77,6 +77,11 @@ void Curl(std::string& str)
 	response = curl_easy_perform(curl);
 	curl_easy_cleanup(curl);
 	stat++;
+	if (str.empty())
+	{
+		std::cout<< "ОШИБКА! Адресс не считался!"<<std::endl;
+		exit(EXIT_FAILURE);
+	}
 }
 void Fortemp(std::string& sstr, int& t)
 {
@@ -85,6 +90,57 @@ void Fortemp(std::string& sstr, int& t)
 		if (sstr[u] == '{')
 		{
 			t++;
+		}
+	}
+}
+void Pars1(std::vector<Massiv*>&d1,std::vector<Massiv*>&d2,std::vector<Massiv*>&res1)
+{
+	for (int i = 0; i < d1.size(); i++)
+	{
+		for (int j = 0; j < d2.size(); j++)
+		{
+			if (*d1[i] == *d2[j])
+			{
+				break;
+			}
+			if (j == d2.size() - 1)
+			{
+				res1.push_back(new Massiv(*d1[i]));
+			}
+		}
+	}
+}
+void Pars2(std::vector<Massiv*>&d11,std::vector<Massiv*>&d22,std::vector<Massiv*>&res2)
+{
+	for (int i = 0; i < d22.size(); i++)
+	{
+		for (int j = 0; j < d11.size(); j++)
+		{
+			if (*d22[i] == *d11[j])
+			{
+				break;
+			}
+			if (j == d11.size() - 1)
+			{
+				res2.push_back(new Massiv(*d22[i]));
+			}
+		}
+	}
+}
+void ParsBigger(std::vector<Massiv*>&d111,std::vector<Massiv*>&d222,std::vector<Massiv*>&res3)
+{
+	for (int i = 0; i < d111.size(); i++)
+	{
+		for (int j = 0; j < d222.size(); j++)
+		{
+			if (d111[i]->Ifsmall(*d222[j]))
+			{
+				break;
+			}		
+			if (j == d222.size() - 1)
+			{
+				res3.push_back(new Massiv(*d111[i]));
+			}
 		}
 	}
 }
